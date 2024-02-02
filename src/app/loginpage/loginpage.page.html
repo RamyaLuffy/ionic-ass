@@ -1,0 +1,34 @@
+
+<ion-content>
+  <div class="ion-padding container">
+    <h1>Demozon</h1>
+<form [formGroup]="formData" class="ion-margin"  (ngSubmit)="onClickSubmit(formData.value)" > 
+  <div class="ion-margin-vertical">
+    <ion-item lines="full">
+      <ion-input formControlName="userName" type="text" placeholder="Enter username"></ion-input>
+    </ion-item>
+  </div>
+  <div class="ion-margin-vertical">
+    <ion-item lines="full">
+      <ion-icon 
+        [name]="type ? 'eye' : 'eye-off'" 
+        slot="end" 
+        color="dark" 
+        (click)="changeType()">
+      </ion-icon>
+      <ion-input formControlName="password" [type]="type ? 'password' : 'text'" 
+        placeholder="Enter password"></ion-input>
+    </ion-item>
+  </div>
+<div class="ion-margin-horizontal ion-margin-vertical">
+  <ion-button size="medium" expand="block" shape="round" color="primary" type="submit">
+    <ion-text>Log In</ion-text>
+  </ion-button>
+  <ion-button size="medium" expand="block" shape="round" color="primary"routerLink="/signup">
+    <ion-text>Sign Up</ion-text>
+  </ion-button>
+</div>
+</form>
+  </div>
+</ion-content>
+

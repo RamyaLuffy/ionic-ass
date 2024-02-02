@@ -1,0 +1,44 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/product-list"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon name="cart-outline" routerLink="/add-to-cart" style="font-size: 50px;"></ion-icon>
+      <ion-badge *ngIf="cartItemCount > 1">{{ cartItemCount }}</ion-badge>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="cartItems.length > 0">
+    <ion-item *ngFor="let item of cartItems">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="item.image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+        <p>Price: ${{ item.price }}</p>
+        <ion-item >
+          <ion-label>Quantity:</ion-label>
+          <ion-buttons slot="end">
+            <ion-button (click)="decrementQuantity()">-</ion-button>
+            <ion-button>{{ quantity }}</ion-button>
+            <ion-button (click)="incrementQuantity()">+</ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-label>
+    
+        
+    </ion-item>
+  </ion-list>
+  <ion-note *ngIf="cartItems.length === 0">
+    Your cart is empty.
+  </ion-note>
+ 
+</ion-content>
+<ion-button color="primary" routerLink="/checkout">
+place order
+</ion-button>

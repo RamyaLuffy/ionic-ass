@@ -33,3 +33,47 @@ After the user navigates to Tab 2 (Photos), they can tap/click on the camera but
 3) Install all packages: `npm install`.
 4) Run on the web: `ionic serve`.
 5) Run on iOS or Android: See [here](https://ionicframework.com/docs/building/running).
+
+
+
+##Ducumentation of project demozon
+
+Login
+
+1. User authentication and authorization.
+
+set the user name and password 
+ userName == admin 
+  password == Ramya
+If the username and password is  valid then login success = true and go to Home Page
+If u entered wrong password and username login success =false  go to login page
+
+Added Guard to protect All routes If the user is not logged in
+
+2 .Product listing and details
+
+Used Dummy Api
+
+API=https://fakestoreapi.com/products"
+
+Added above Api in //product-list.service file
+
+display all the products in Home page 
+
+- Once you Click on products It will go to products details 
+- product details includes information about the product and add to cart button 
+
+3.Shopping cart functionality. 
+- once you click add to cart button product will be added to cart and 
+- If u click cart Icon go to cart page and  can find all the added products
+- In cart page added place order button If u click that your order will be placed 
+
+Added back button to all the pages
+
+4.Responsive design for various devices
+
+Responsive For all the Mobile devices
+
+ 
+
+
